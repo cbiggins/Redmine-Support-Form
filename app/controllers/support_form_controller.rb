@@ -45,7 +45,7 @@ class SupportFormController < ApplicationController
       members = Member.find(:all, :joins => :member_roles, :conditions => { :project_id => @project , :member_roles => { :role_id => @role }} )
 
       # new issue
-      issue = Issue.create
+      issue = Issue.new
 
       # We'll populate a user array so we can loop over them for the notifications
       members.each do |member|
