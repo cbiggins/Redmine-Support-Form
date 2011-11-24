@@ -1,0 +1,12 @@
+en:
+  label_support_form_subject: "Subject"
+  label_support_form_system: "What operating system / browsers have been tested?"
+  label_support_form_description: "What error occured? What was wrong?"
+  label_support_form_expectation: "How did this differ from your expectations?"
+  label_support_form_leadup: "What were you doing just prior to this occurring?"
+  label_support_form_occurrence: "Does this problem occur every time?"
+  label_support_form_comments: "Any other comments / observations you wish to add?"
+  label_support_form_priority: "What priority is this issue?"
+
+  support_form_email_body: "Thank you for logging your support issue with us. We will endevour to respond as quickly as possible. A link to your issue is provided below."
+  support_form_email_subject_prefix: "Thank you for your support issue: "

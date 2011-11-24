@@ -1,0 +1,84 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'support_form.css', :plugin => 'redmine_support_form' %>
+<% end %>
+
+<h2>Create new support issue</h2>
+
+<div class="support_form_container">
+
+<%= form_tag( {:action => 'handle_post'}, :multipart => true ) %>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_subject) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_field "Issue", "subject", "size" => 150, :class => "support_form_text" %>
+        </div>
+    </div>
+        
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_system) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_area "Issue", "system", :cols => 82, :rows => 5 %>
+        </div>
+    </div>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_description) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_area "Issue", "description", :cols => 82, :rows => 5 %>
+        </div>
+    </div>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_expectation) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_area "Issue", "expectation", :cols => 82, :rows => 5 %>
+        </div>
+    </div>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_leadup) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_area "Issue", "leadup", :cols => 82, :rows => 5 %>
+        </div>
+    </div>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_occurrence) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_area "Issue", "occurrence", :cols => 82, :rows => 5 %>
+        </div>
+    </div>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_comments) %>
+        </div>
+        <div class="support_form_field">
+            <%= text_area "Issue", "comments", :cols => 82, :rows => 5 %>
+        </div>
+    </div>
+
+    <div class="support_form_item">
+        <div class="support_form_label">
+            <%= l(:label_support_form_priority) %>
+        </div>
+        <div class="support_form_field">
+            <%= select "Issue", 'priority_id', options_from_collection_for_select(IssuePriority.all, :id, :name) %>
+        </div>
+    </div>
+    <%= hidden_field "Issue", "project_id", :value => @project_id %>
+    <%= submit_tag( "Create" ) %>
+</div>

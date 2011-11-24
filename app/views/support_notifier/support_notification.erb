@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>
+      Thank you for logging your support issue with us. We will endevour to respond as quickly as possible. A link to your issue is provided below.
+    </p>
+    <p>
+      Issue Details:<br />
+      <%= @description %>
+    </p>
+    <p>
+        <% url = url_for(:action => 'show', :controller => 'issues', :only_path => false, :protocol => 'http', :host => 'redmine.previousnext.com.au', :id => @issue) %>
+        <%= link_to @issue.to_s, url %>
+    </p>
+  </body>
+</html>
